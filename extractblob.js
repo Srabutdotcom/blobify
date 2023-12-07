@@ -51,6 +51,7 @@ export async function getValueBasedOnType(data) {
       case 'BigUint64Array': return { blob: r1, value: new BigUint64Array(value) }
       case 'DataView': return { blob: r1, value: new DataView(value) }
       case 'function': return { blob: r1, value: Function('return ' + value)() }
+      case 'Map' : return await getMapFromBlob({ blob: sliced, reminder: r1 })
       default: return { blob: r1, value }
    }
 }
@@ -112,6 +113,11 @@ async function getArrayFromBlob(data) {
       arr.push(value)
    } while ((_blobO && _blobO.size > 0));
    return { blob: data.reminder, value: arr }
+}
+
+async function getMapFromBlob(data) {
+   const { value, blob } = await getArrayFromBlob(data)
+   return { blob: data.reminder, value: new Map(...value) }
 }
 
 async function getPrimitiveObjectFromBlob(data) {

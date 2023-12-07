@@ -79,6 +79,7 @@ function blobifyObject(data) {
       case Boolean: return primitiveObject({data:data,tipe})
       case Array : return walkArray(data)
       case Object: return walkObject(data)
+      case Map: return walkMap(data)
       /* case PublicKeyCredential:
       case AuthenticatorAssertionResponse: */
       default: return walkObject(data)
@@ -98,6 +99,13 @@ function walkArray(data){
    for(const a of data){
       init.push(blobify(a))
    }
+   return new Blob(init)
+}
+
+function walkMap(data){
+   const init = []
+   const array = [...data.entries()];
+   init.push(blobify(array))
    return new Blob(init)
 }
 
