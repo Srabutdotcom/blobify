@@ -8,4 +8,4 @@ const map = blobify(new Map([
    ['occupation', 'Software Engineer'],
  ]));
 const _map = await parseBlob(map); 
-debugger;
+console.log('map testing')
