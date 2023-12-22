@@ -1,4 +1,4 @@
-function typeofData(data){
+/* function typeofData(data){
    const tipeOf = data === null ? 'null' : typeof data
    switch (tipeOf) {
       case 'object':
@@ -7,9 +7,11 @@ function typeofData(data){
          return tipeOf
    }
 }
+ */
+import { whatis } from "https://raw.githubusercontent.com/Srabutdotcom/aids/master/whatis/whatis.js";
 
 export function blobify(data) {
-   const init = [...arrayfyData(typeofData(data)), ...arrayfyData(data)];
+   const init = [...arrayfyData(whatis(data)), ...arrayfyData(data)];
    return new Blob(init);
 }
 
