@@ -1,3 +1,3 @@
-export { blobify } from './blobify.js';
-export { parseBlob } from './extractblob.js';
-export { writeBlob, readBlob } from './savefile.js';
+export * from './blobify.js';
+export * from './parseblob.js';
+export * from './savefile.js';

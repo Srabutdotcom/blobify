@@ -1,5 +1,4 @@
-import { blobify } from "../blobify.js";
-import { parseBlob } from "../extractblob.js";
+import { blobify, parseBlob } from '../src/mod.js';
 
 console.log('map')
 const map = blobify(new Map([

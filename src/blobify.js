@@ -1,4 +1,4 @@
-import { whatis } from "https://raw.githubusercontent.com/Srabutdotcom/aids/master/whatis/whatis.js";
+import { whatis } from '../../aids/mod.js';
 
 export function blobify(data) {
    const init = [...arrayfyData(whatis(data)), ...arrayfyData(data)];

@@ -1,5 +1,5 @@
 import { blobify } from "./blobify.js";
-import { parseBlob } from "./extractblob.js";
+import { parseBlob } from "./parseblob.js";
 
 export async function writeBlob(path, data){
    Deno.writeFileSync(path, new Uint8Array(await blobify(data).arrayBuffer()))
