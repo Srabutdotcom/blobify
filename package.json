@@ -1,9 +1,0 @@
-{
-   "type": "module",
-   "scripts": {
-      "start": "deno ./src/mod.js"
-   },
-   "devDependencies": {
-      "@rollup/plugin-terser": "^0.4.4"
-   }
-}

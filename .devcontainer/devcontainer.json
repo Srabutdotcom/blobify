@@ -1,9 +1,0 @@
-{
-   "name": "Deno Development Container",
-   "dockerFile": "Dockerfile",
-   "settings": {
-     "terminal.integrated.shell.linux": "/bin/bash"
-   },
-   "extensions": [],
-   "postCreateCommand": "curl -fsSL https://deno.land/x/install/install.sh | sh"
- }

@@ -1,14 +1,16 @@
-import { blobify } from "../blobify.js";
-import { parseBlob } from "../extractblob.js";
-import { writeBlob, readBlob } from "../savefile.js";
+const url = import.meta.url;
+import { writeBlob, readBlob } from "../src/savefile.js";
 
 const data = [
    ['js','application/javascript'],
-   ['css','application/css']
+   ['css','application/css'],
+   ['jpg', 'image/jpg']
 ]
+debugger;
+const path = new URL('test.file', url)
 
-await writeBlob('./serv/library/tofromblob/test/test.file',data)
+await writeBlob(path,data)
 
-const r = await readBlob('./serv/library/tofromblob/test/test.file')
+const r = await readBlob(path)
 
 debugger;

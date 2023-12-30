@@ -1,5 +1,4 @@
-import { blobify } from "../blobify.js";
-import { parseBlob } from "../extractblob.js";
+import { blobify, parseBlob } from "../src/mod.client.js";
 
 const assertion = {
    id: 'KclyB9MNlg-pu0LhqqHeq2sPyAAQ_CFpxII2QXDOJ4U',
@@ -37,6 +36,14 @@ console.log('undefined')
 const undef = blobify(undefined);
 const _undef = await parseBlob( undef );
 
+console.log('NaN')
+const nan = blobify(NaN);
+const _nan = await parseBlob( nan );
+
+console.log('Infinity')
+const infinite = blobify(Infinity);
+const _infinite = await parseBlob( infinite );
+
 console.log('symbol')
 const sym = blobify(Symbol('b'));
 const _sym = await parseBlob(sym );
@@ -50,7 +57,7 @@ const _Bool = await parseBlob(Boolbify);
 console.log('String');
 const Strg = new String('String Neh');
 Strg['str']="yes this is String"
-const Strbify = blobify(Strg);debugger;
+const Strbify = blobify(Strg);
 const _String = await parseBlob(Strbify);
 
 console.log('Number');
@@ -74,3 +81,5 @@ const _Arr = await parseBlob(Arr );
 console.log('assertion')
 const assert = blobify(assertion);
 const _assert = await parseBlob(assert); 
+
+debugger;

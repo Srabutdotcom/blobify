@@ -1,7 +1,8 @@
-import { whatis } from '../../aids/mod.js';
+//import { whatis } from '../../aids/mod.js';
+import { whatis } from 'https://deno.land/x/aids@v.1.0.1/whatis/whatis.js?source';
 
 export function blobify(data) {
-   const init = [...arrayfyData(whatis(data)), ...arrayfyData(data)];
+   const init = [...arrayfyData(''+whatis(data)), ...arrayfyData(data)];
    return new Blob(init);
 }
 
@@ -68,7 +69,7 @@ function blobifyObject(data) {
       case BigUint64Array: return data
       case String: 
       case Number:
-      case Boolean: return primitiveObject({data:data,tipe})
+      case Boolean: return primitiveObject({data,tipe})
       case Array : return walkArray(data)
       case Object: return walkObject(data)
       case Map: return walkMap(data)
