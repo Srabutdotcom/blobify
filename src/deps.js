@@ -1,1 +1,1 @@
-export * from '../../aids/whatis/whatis.js';
+export * from '../../aid/whatis/whatis.js';
