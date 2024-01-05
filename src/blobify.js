@@ -1,5 +1,5 @@
-//import { whatis } from '../../aids/mod.js';
-import { whatis } from 'https://deno.land/x/aids@v.1.0.1/whatis/whatis.js?source';
+import { whatis } from './deps.js';
+//import { whatis } from 'https://deno.land/x/aids@v.1.0.1/whatis/whatis.js?source';
 
 export function blobify(data) {
    const init = [...arrayfyData(''+whatis(data)), ...arrayfyData(data)];
