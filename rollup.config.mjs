@@ -1,4 +1,6 @@
 import terser from '@rollup/plugin-terser';
+import resolve from '@rollup/plugin-node-resolve'; // Import the resolve plugin
+
 export default [
   {
     input: './src/mod.js',
@@ -8,7 +10,9 @@ export default [
       format: 'es', // Use ES module format,
       //chunkFileNames: '[name]-[hash].js'
     },
+    external: ['https://raw.githubusercontent.com/Srabutdotcom/aid/master/whatis/dist/whatis.bundle.js'],
     plugins: [
+      resolve(), 
       terser(), // Minify the output bundle
     ],
   },
@@ -21,7 +25,9 @@ export default [
       format: 'es', // Use ES module format,
       //chunkFileNames: '[name]-client.bundle.js'
     },
+    external: ['https://raw.githubusercontent.com/Srabutdotcom/aid/master/whatis/dist/whatis.bundle.js'],
     plugins: [
+      resolve(), 
       terser(), // Minify the output bundle
     ],
   },
